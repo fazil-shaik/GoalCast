@@ -4,7 +4,12 @@ import session from 'express-session';
 import MemoryStore from 'memorystore';
 import { z } from 'zod';
 import { fromZodError } from 'zod-validation-error';
-import { insertUserSchema, insertGoalSchema, insertCheckInSchema } from '@shared/schema';
+import { importWithAliases } from '../api/module-resolver.js';
+
+// Import schema using the module resolver
+const schema = await importWithAliases('../shared/schema.js');
+const { insertUserSchema, insertGoalSchema, insertCheckInSchema } = schema;
+
 import dotenv from 'dotenv';
 
 dotenv.config();

@@ -1,6 +1,10 @@
 import { drizzle } from 'drizzle-orm/postgres-js';
 import postgres from 'postgres';
-import * as schema from '@shared/schema';
+import { importWithAliases } from '../api/module-resolver.ts';
+
+// Import schema using the module resolver
+const schema = await importWithAliases('../shared/schema.js');
+
 import { eq, and } from 'drizzle-orm';
 import dotenv from 'dotenv';
 
