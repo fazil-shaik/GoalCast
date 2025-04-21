@@ -1,7 +1,7 @@
 import { drizzle } from 'drizzle-orm/postgres-js';
 import postgres from 'postgres';
 import * as schema from '../shared/schema';
-import { eq } from 'drizzle-orm';
+import { eq, and } from 'drizzle-orm';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -37,8 +37,10 @@ export const storage = {
   async getActiveGoalsByUserId(userId: number) {
     return await db.select()
       .from(schema.goals)
-      .where(eq(schema.goals.userId, userId))
-      .where(eq(schema.goals.status, 'active'));
+      .where(and(
+        eq(schema.goals.userId, userId),
+        eq(schema.goals.status, 'active')
+      ));
   },
 
   async createGoal(goalData: any) {
@@ -63,8 +65,10 @@ export const storage = {
   async getCompletedCheckInsCount(goalId: number) {
     const checkIns = await db.select()
       .from(schema.checkIns)
-      .where(eq(schema.checkIns.goalId, goalId))
-      .where(eq(schema.checkIns.isCompleted, true));
+      .where(and(
+        eq(schema.checkIns.goalId, goalId),
+        eq(schema.checkIns.isCompleted, true)
+      ));
     return checkIns.length;
   },
 
