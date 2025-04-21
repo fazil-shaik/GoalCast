@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "NODE_ENV=development tsx server/index.ts",
-    "build": "vite build && tsc -p api/tsconfig.json",
-    "vercel-build": "NODE_ENV=production vite build && tsc -p api/tsconfig.json",
+    "build": "vite build && tsc -p api/tsconfig.json && cp -r api/*.ts dist/api/",
+    "vercel-build": "NODE_ENV=production vite build && tsc -p api/tsconfig.json && cp -r api/*.ts dist/api/",
     "start": "NODE_ENV=production node dist/index.js",
     "check": "tsc",
     "db:push": "drizzle-kit push"
