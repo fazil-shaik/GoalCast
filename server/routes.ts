@@ -1,6 +1,6 @@
 import express, { type Express, Request, Response } from "express";
 import { createServer, type Server } from "http";
-import { storage } from "./storage";
+import { storage } from "./storage.ts";
 import session from "express-session";
 import { z } from "zod";
 import { insertUserSchema, insertGoalSchema, insertCheckInSchema, insertFeedItemSchema, insertChallengeSchema } from "@shared/schema";
