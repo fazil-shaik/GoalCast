@@ -5,13 +5,13 @@
     "moduleResolution": "node",
     "target": "ESNext",
     "outDir": "../dist/api",
-    "rootDir": ".",
+    "rootDir": "..",
     "esModuleInterop": true,
     "allowImportingTsExtensions": true,
     "noEmit": true,
     "declaration": false,
     "sourceMap": true
   },
-  "include": ["./**/*.ts"],
+  "include": ["./**/*.ts", "../shared/**/*.ts"],
   "exclude": ["node_modules"]
 } 
