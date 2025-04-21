@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Page</title>
+</head>
+<body>
+  <h1>Test Page</h1>
+  <p>If you can see this, the server is working.</p>
+  <script>
+    // Test script to fetch from our API
+    fetch('/api/ping')
+      .then(response => response.json())
+      .then(data => {
+        const result = document.createElement('pre');
+        result.textContent = JSON.stringify(data, null, 2);
+        document.body.appendChild(result);
+      })
+      .catch(error => {
+        const errorMsg = document.createElement('p');
+        errorMsg.style.color = 'red';
+        errorMsg.textContent = 'Error: ' + error.message;
+        document.body.appendChild(errorMsg);
+      });
+  </script>
+</body>
+</html>
