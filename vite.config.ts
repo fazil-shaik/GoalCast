@@ -14,6 +14,14 @@ export default defineConfig({
     react(),
     runtimeErrorOverlay(),
     themePlugin(),
+    ...(process.env.NODE_ENV !== "production" &&
+    process.env.REPL_ID !== undefined
+      ? [
+          await import("@replit/vite-plugin-cartographer").then((m) =>
+            m.cartographer(),
+          ),
+        ]
+      : []),
   ],
   resolve: {
     alias: {
@@ -24,15 +32,10 @@ export default defineConfig({
   },
   root: path.resolve(__dirname, "client"),
   build: {
-    outDir: path.resolve(__dirname, "dist"),
+    outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
   },
   server: {
-    proxy: {
-      '/api': {
-        target: 'http://localhost:5173',
-        changeOrigin: true,
-      }
-    }
-  }
+    allowedHosts:['https://e297-2409-40f0-27-c00-7154-5baf-d700-ba78.ngrok-free.app'],
+  }  
 });
