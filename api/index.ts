@@ -1,5 +1,5 @@
 import express from 'express';
-import { storage } from './storage';
+import { storage } from './storage.js';
 import session from 'express-session';
 import MemoryStore from 'memorystore';
 import { z } from 'zod';
