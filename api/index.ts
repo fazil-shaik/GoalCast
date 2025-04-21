@@ -1,10 +1,13 @@
 import express from 'express';
-import { storage } from '../server/storage';
+import { storage } from './storage';
 import session from 'express-session';
 import MemoryStore from 'memorystore';
 import { z } from 'zod';
 import { fromZodError } from 'zod-validation-error';
 import { insertUserSchema, insertGoalSchema, insertCheckInSchema } from '../shared/schema';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // Extend the express-session types
 declare module 'express-session' {
