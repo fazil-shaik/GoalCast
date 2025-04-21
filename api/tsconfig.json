@@ -7,8 +7,10 @@
     "outDir": "../dist/api",
     "rootDir": ".",
     "esModuleInterop": true,
-    "allowImportingTsExtensions": true,
-    "noEmit": false
+    "allowImportingTsExtensions": false,
+    "noEmit": false,
+    "declaration": false,
+    "sourceMap": true
   },
   "include": ["./**/*.ts"],
   "exclude": ["node_modules"]
