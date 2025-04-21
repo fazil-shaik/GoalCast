@@ -1,6 +1,6 @@
 import { drizzle } from 'drizzle-orm/postgres-js';
 import postgres from 'postgres';
-import * as schema from '../shared/schema';
+import * as schema from '@shared/schema';
 import { eq, and } from 'drizzle-orm';
 import dotenv from 'dotenv';
 
