@@ -4,7 +4,7 @@ import session from 'express-session';
 import MemoryStore from 'memorystore';
 import { z } from 'zod';
 import { fromZodError } from 'zod-validation-error';
-import { insertUserSchema, insertGoalSchema, insertCheckInSchema } from '../shared/schema';
+import { insertUserSchema, insertGoalSchema, insertCheckInSchema } from '../shared/schema.ts';
 import dotenv from 'dotenv';
 
 dotenv.config();
