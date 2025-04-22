@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Sidebar } from "@/components/sidebar";
+import  Sidebar  from "../components/sidebar";
 import { useAuth } from "@/lib/auth-context";
 import { useLocation } from "wouter";
 import { Skeleton } from "@/components/ui/skeleton";
