@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "dist/server/index.js",
+      "src": "dist/server/server/server/index.js",
       "use": "@vercel/node",
       "config": {
         "includeFiles": ["dist/server/**/*"]
@@ -16,14 +16,16 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/dist/server/index.js"
-    },
-    {
-      "handle": "filesystem"
+      "dest": "/dist/server/server/server/index.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/dist/client/$1"
+      "dest": "/dist/client/$1",
+      "continue": true
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/dist/server/server/server/index.js"
     }
   ]
 } 
