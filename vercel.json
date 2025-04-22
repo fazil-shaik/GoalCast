@@ -11,6 +11,10 @@
       "config": {
         "distDir": "dist"
       }
+    },
+    {
+      "src": "server/index.ts",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
