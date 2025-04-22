@@ -1,4 +1,33 @@
-import { users, type User, type InsertUser, goals, type Goal, type InsertGoal, checkIns, type CheckIn, type InsertCheckIn, feedItems, type FeedItem, type InsertFeedItem, socialAccounts, type SocialAccount, type InsertSocialAccount, follows, type Follow, type InsertFollow, challenges, type Challenge, type InsertChallenge, challengeParticipants, type ChallengeParticipant, type InsertChallengeParticipant, challengeUpdates, type ChallengeUpdate, type InsertChallengeUpdate, ChallengeWithDetails } from "@shared/schema";
+import { 
+  users, 
+  type User, 
+  type InsertUser, 
+  goals, 
+  type Goal, 
+  type InsertGoal, 
+  checkIns, 
+  type CheckIn, 
+  type InsertCheckIn, 
+  feedItems, 
+  type FeedItem, 
+  type InsertFeedItem, 
+  socialAccounts, 
+  type SocialAccount, 
+  type InsertSocialAccount, 
+  follows, 
+  type Follow, 
+  type InsertFollow, 
+  challenges, 
+  type Challenge, 
+  type InsertChallenge, 
+  challengeParticipants, 
+  type ChallengeParticipant, 
+  type InsertChallengeParticipant, 
+  challengeUpdates, 
+  type ChallengeUpdate, 
+  type InsertChallengeUpdate, 
+  type ChallengeWithDetails 
+} from "../shared/schema";
 import { db } from "./db";
 import { eq, desc, and, gte, count, sql, asc, or } from "drizzle-orm";
 

@@ -2,40 +2,28 @@
   "version": 2,
   "builds": [
     {
-      "src": "client/**/*",
-      "use": "@vercel/static",
+      "src": "dist/server/index.js",
+      "use": "@vercel/node",
       "config": {
-        "mimeTypes": {
-          ".ico": "image/x-icon",
-          ".png": "image/png",
-          ".js": "application/javascript",
-          ".mjs": "application/javascript",
-          ".ts": "application/javascript",
-          ".tsx": "application/javascript",
-          ".jsx": "application/javascript"
-        }
+        "includeFiles": ["dist/server/**/*"]
       }
     },
     {
-      "src": "server/index.ts",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["server/**/*"]
-      }
+      "src": "dist/client/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/server/index.ts"
+      "dest": "/dist/server/index.js"
     },
     {
-      "src": "/src/(.*)",
-      "dest": "/client/src/$1"
+      "handle": "filesystem"
     },
     {
       "src": "/(.*)",
-      "dest": "/client/$1"
+      "dest": "/dist/client/$1"
     }
   ]
 } 

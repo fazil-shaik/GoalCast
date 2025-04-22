@@ -1,8 +1,9 @@
-import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
-import WebSocketManager from "./websocket";
-import { addResetTokenColumns } from './migrations/add-reset-token-columns';
+import express from "express";
+import { type Request, type Response, type NextFunction } from "express";
+import { registerRoutes } from "./routes.js";
+import { setupVite, serveStatic, log } from "./vite.js";
+import WebSocketManager from "./websocket.js";
+import { addResetTokenColumns } from './migrations/add-reset-token-columns.js';
 
 const app = express();
 app.use(express.json());
