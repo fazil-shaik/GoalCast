@@ -22,7 +22,7 @@ const testEmailConfig = async () => {
   try {
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD || !process.env.CLIENT_URL) {
       console.error('Missing email configuration:', {
-        EMAIL_USER: process.env.EMAIL_USER ? 'Set' : 'Missing',
+        EMAILUSER: process.env.EMAIL_USER ? 'Set' : 'Missing',
         EMAIL_PASSWORD: process.env.EMAIL_PASSWORD ? 'Set' : 'Missing',
         CLIENT_URL: process.env.CLIENT_URL ? 'Set' : 'Missing'
       });

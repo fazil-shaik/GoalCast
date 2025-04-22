@@ -1,13 +1,13 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { AuthContext } from "@/lib/auth-context";
+import { useAuth } from "@/lib/auth-context";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
-export function Sidebar() {
+export default function Sidebar() {
   const [location] = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const auth = useContext(AuthContext);
+  const auth = useAuth();
   
   const isActive = (path: string) => {
     return location === path;

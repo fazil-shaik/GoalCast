@@ -1,6 +1,5 @@
-import { useContext } from "react";
+import { useAuth } from "@/lib/auth-context";
 import { Button } from "@/components/ui/button";
-import { AuthContext } from "@/lib/auth-context";
 import { Twitter, Linkedin } from "lucide-react";
 import { shareToTwitter, shareToLinkedIn } from "@/lib/social-share";
 
@@ -9,7 +8,7 @@ interface SocialSharePreviewProps {
 }
 
 export function SocialSharePreview({ content }: SocialSharePreviewProps) {
-  const { user } = useContext(AuthContext);
+  const { user } = useAuth();
   
   const handleTwitterShare = () => {
     shareToTwitter(content, ["BuildInPublic", "GoalCast"]);
