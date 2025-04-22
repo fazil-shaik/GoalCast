@@ -64,8 +64,7 @@ async function main() {
       await setupVite(app, server);
     }
 
-    // For Vercel, we need to export the app
-    module.exports = app;
+    return app;
   } catch (error) {
     console.error('Failed to start server:', error);
     process.exit(1);
@@ -76,3 +75,6 @@ async function main() {
 if (process.env.NODE_ENV !== "production" || process.env.VERCEL !== "1") {
   main();
 }
+
+// Export the app for Vercel
+export default app;

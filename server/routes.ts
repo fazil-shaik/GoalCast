@@ -3,7 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage.ts";
 import session from "express-session";
 import { z } from "zod";
-import { insertUserSchema, insertGoalSchema, insertCheckInSchema, insertFeedItemSchema, insertChallengeSchema } from "@shared/schema";
+import { insertUserSchema, insertGoalSchema, insertCheckInSchema, insertFeedItemSchema, insertChallengeSchema } from "../shared/schema.ts";
 import { fromZodError } from "zod-validation-error";
 import MemoryStore from "memorystore";
 import path from "path";
