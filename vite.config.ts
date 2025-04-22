@@ -34,6 +34,11 @@ export default defineConfig({
   build: {
     outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
   },
   server: {
     allowedHosts:['https://e297-2409-40f0-27-c00-7154-5baf-d700-ba78.ngrok-free.app'],

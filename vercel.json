@@ -3,7 +3,18 @@
   "builds": [
     {
       "src": "client/**/*",
-      "use": "@vercel/static"
+      "use": "@vercel/static",
+      "config": {
+        "mimeTypes": {
+          ".ico": "image/x-icon",
+          ".png": "image/png",
+          ".js": "application/javascript",
+          ".mjs": "application/javascript",
+          ".ts": "application/javascript",
+          ".tsx": "application/javascript",
+          ".jsx": "application/javascript"
+        }
+      }
     },
     {
       "src": "server/index.ts",
@@ -19,7 +30,8 @@
       "dest": "/server/index.ts"
     },
     {
-      "handle": "filesystem"
+      "src": "/src/(.*)",
+      "dest": "/client/src/$1"
     },
     {
       "src": "/(.*)",
